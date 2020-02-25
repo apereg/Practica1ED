@@ -71,7 +71,12 @@ public class EventArrayImpl implements Event {
 	@Override
 	public int getNumberOfSoldSeats() {
 		// TODO Auto-generated method stub
-		return this.seats.length;
+		int count = 0;
+		for (Seat seat : this.seats) {
+			if(seat != null)
+				count++;
+		}
+		return count;
 	}
 
 	@Override
@@ -214,7 +219,7 @@ public class EventArrayImpl implements Event {
 
 		for (int i = 0; i < this.seats.length; i++) {
 			if (this.seats[i] == null) {
-				if(aux < maxConsecutive)
+				if(aux > maxConsecutive)
 					maxConsecutive = aux;
 				aux = 0;
 			} else {
@@ -252,7 +257,7 @@ public class EventArrayImpl implements Event {
 	public int getPosPerson(Person p) {
 		for (int i = 0; i < this.seats.length; i++) {
 			if(this.seats[i] != null)
-				if(this.seats[i].getHolder().equals(p))
+				if(this.seats[i].getHolder() == p)
 					return i+1;
 		}
 		return -1;
@@ -261,8 +266,10 @@ public class EventArrayImpl implements Event {
 	@Override
 	public boolean isAdvanceSale(Person p) {
 		int pos = this.getPosPerson(p);
-		if(pos != -1)
-			return this.getSeat(pos--).getType() == Configuration.Type.ADVANCE_SALE;
+		if(pos != -1) {
+			pos--;
+			return this.seats[pos].getType() == Configuration.Type.ADVANCE_SALE;
+		}
 		return false;
 	}
 
