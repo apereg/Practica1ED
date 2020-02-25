@@ -1,13 +1,10 @@
 package ule.edi.event;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 import ule.edi.model.*;
-import ule.edi.model.Configuration.Type;
 
 public class EventArrayImpl implements Event {
 
@@ -21,7 +18,6 @@ public class EventArrayImpl implements Event {
 	private Seat[] seats;
 
 	public EventArrayImpl(String name, Date date, int nSeats) {
-		// TODO
 		// utiliza los precios por defecto: DEFAULT_PRICE y DEFAULT_DISCOUNT definidos
 		// en Configuration.java
 		// Debe crear el array de butacas
