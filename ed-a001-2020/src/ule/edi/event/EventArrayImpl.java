@@ -20,7 +20,6 @@ public class EventArrayImpl implements Event {
 	public EventArrayImpl(String name, Date date, int nSeats) {
 		// utiliza los precios por defecto: DEFAULT_PRICE y DEFAULT_DISCOUNT definidos
 		// en Configuration.java
-		// Debe crear el array de butacas
 		this.name = name;
 		this.eventDate = date;
 		this.price = Configuration.DEFAULT_PRICE;
@@ -30,7 +29,6 @@ public class EventArrayImpl implements Event {
 	}
 
 	public EventArrayImpl(String name, Date date, int nSeats, Double price, Byte discount) {
-		// TODO
 		// Debe crear el array de butacas
 		this.name = name;
 		this.eventDate = date;
@@ -42,31 +40,26 @@ public class EventArrayImpl implements Event {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return this.name;
 	}
 
 	@Override
 	public Date getDateEvent() {
-		// TODO Auto-generated method stub
 		return this.eventDate;
 	}
 
 	@Override
 	public Double getPrice() {
-		// TODO Auto-generated method stub
 		return this.price;
 	}
 
 	@Override
 	public Byte getDiscountAdvanceSale() {
-		// TODO Auto-generated method stub
 		return this.discountAdvanceSale;
 	}
 
 	@Override
 	public int getNumberOfSoldSeats() {
-		// TODO Auto-generated method stub
 		int count = 0;
 		for (Seat seat : this.seats) {
 			if(seat != null)

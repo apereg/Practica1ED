@@ -57,8 +57,6 @@ public class EventArrayImplTests {
 		Assert.assertTrue(e.getCollectionEvent() == 75);
 	}
 
-	// TODO EL RESTO DE MÉTODOS DE TESTS NECESARIOS PARA LA COMPLETA COMPROBACIÓN
-	// DEL BUEN FUNCIONAMIENTO DE TODO EL CÓDIGO IMPLEMENTADO
 	@Test
 	public void testgetPriceWithOutDiscount() throws Exception {
 		Assert.assertTrue(e.sellSeat(1, person, false));
